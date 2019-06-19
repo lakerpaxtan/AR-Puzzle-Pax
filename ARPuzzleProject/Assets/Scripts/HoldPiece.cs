@@ -22,6 +22,10 @@ public class HoldPiece : MonoBehaviour
 
     public GameObject linePrefab;
 
+    public GameObject cornerPrefab;
+
+    public GameObject cubePrefab;
+
     public static string heldPiece;
 
     private TMPro.TextMeshProUGUI textComponent;
@@ -77,6 +81,12 @@ public class HoldPiece : MonoBehaviour
 
             case "zPiece":
                 showPiece = Instantiate(zPrefab);
+                break;
+            case "cubePiece":
+                showPiece = Instantiate(cubePrefab);
+                break;
+            case "cornerPiece":
+                showPiece = Instantiate(cornerPrefab);
                 break;
 
         }

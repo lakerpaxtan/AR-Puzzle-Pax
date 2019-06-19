@@ -30,6 +30,11 @@ public class FieldScript : MonoBehaviour
     public Material zMaterial;
     public Material lMaterialST;
     public Material lineMaterialST;
+
+    public Material cubeMaterialST;
+    public Material cornerMaterialST;
+    public Material cubeMaterial;
+    public Material cornerMaterial;
     public Material zMaterialST;
     public Material tMaterialST;
     public float currentSpeed;
@@ -342,6 +347,12 @@ public class FieldScript : MonoBehaviour
             case ("zPiece"):
                 reflectionMat = zMaterialST;
                 break;
+            case ("cubePiece"):
+                reflectionMat = cubeMaterialST;
+                break;
+            case ("cornerPiece"):
+                reflectionMat = cornerMaterialST;
+                break;
         }
 
         var currNode = reflectionObjects.First;
@@ -394,6 +405,14 @@ public class FieldScript : MonoBehaviour
         else if (tempString == "tPiece")
         {
             tempSet2 = tPieceSet();
+        }
+        else if (tempString == "cubePiece")
+        {
+            tempSet2 = cubePieceSet();
+        }
+        else if (tempString == "cornerPiece")
+        {
+            tempSet2 = cornerPieceSet();
         }
 
         if (lossCheck(tempSet2))
@@ -1007,6 +1026,16 @@ public class FieldScript : MonoBehaviour
                 tempString = "zPiece";
                 break;
 
+            case 5: 
+                tempSet2 = cubePieceSet();
+                tempString = "cubePiece";
+                break;
+            
+            case 6: 
+                tempSet2 = cornerPieceSet();
+                tempString = "cornerPiece";
+                break;
+
             default:
                 tempString = "broken";
                 break;
@@ -1029,6 +1058,40 @@ public class FieldScript : MonoBehaviour
 
 
     }
+
+
+    LinkedList<Vector3> cubePieceSet()
+    {
+        LinkedList<Vector3> tempSet2 = new LinkedList<Vector3>();
+        Vector3 tempVector;
+        tempSet2.AddLast(spawnTop);
+        tempVector = new Vector3(spawnTop.x, spawnTop.y, spawnTop.z + 1);
+        tempSet2.AddLast(tempVector);
+        tempVector = new Vector3(spawnTop.x + 1, spawnTop.y, spawnTop.z + 1);
+        tempSet2.AddLast(tempVector);
+        tempVector = new Vector3(spawnTop.x + 1, spawnTop.y, spawnTop.z);
+        tempSet2.AddLast(tempVector);
+
+        return tempSet2;
+
+    }
+
+    LinkedList<Vector3> cornerPieceSet()
+    {
+        LinkedList<Vector3> tempSet2 = new LinkedList<Vector3>();
+        Vector3 tempVector;
+        tempSet2.AddLast(spawnTop);
+        tempVector = new Vector3(spawnTop.x + 1, spawnTop.y, spawnTop.z);
+        tempSet2.AddLast(tempVector);
+        tempVector = new Vector3(spawnTop.x , spawnTop.y, spawnTop.z + 1);
+        tempSet2.AddLast(tempVector);
+        tempVector = new Vector3(spawnTop.x , spawnTop.y + 1, spawnTop.z);
+        tempSet2.AddLast(tempVector);
+
+        return tempSet2;
+
+    }
+
 
     //returns a set of vector points for an l piece
     LinkedList<Vector3> lPieceSet()
@@ -1173,6 +1236,14 @@ public class FieldScript : MonoBehaviour
             if(tempString == "zPiece")
             {
                 currentCube.GetComponent<MeshRenderer>().material = zMaterial;
+            }
+            if(tempString == "cubePiece")
+            {
+                currentCube.GetComponent<MeshRenderer>().material = cubeMaterial;
+            }
+            if(tempString == "cornerPiece")
+            {
+                currentCube.GetComponent<MeshRenderer>().material = cornerMaterial;
             }
 
             

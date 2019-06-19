@@ -5450,6 +5450,10 @@ MonoBehaviour:
   zMaterial: {fileID: 2100000, guid: eca9edb7bcc825d468e46b36cd676cf4, type: 2}
   lMaterialST: {fileID: 2100000, guid: f3c5a28cf08c4409cb1a86f13d9d16aa, type: 2}
   lineMaterialST: {fileID: 2100000, guid: 4c642fde0c3c24bc38796b8d79cb4d7e, type: 2}
+  cubeMaterialST: {fileID: 2100000, guid: b80cb731712c64f67980b95b76c2b06c, type: 2}
+  cornerMaterialST: {fileID: 2100000, guid: 5a4e8f72aee34445aaa6db47c1717ab6, type: 2}
+  cubeMaterial: {fileID: 2100000, guid: 1b06e74a5624b4d0aabbb4d9b6a82353, type: 2}
+  cornerMaterial: {fileID: 2100000, guid: e5012695333b94cc38dad7eda6fd2076, type: 2}
   zMaterialST: {fileID: 2100000, guid: 5d341263e6af6484d9e87f3bc3c37e5a, type: 2}
   tMaterialST: {fileID: 2100000, guid: bd484e361b985489ab37ab9ff702af8d, type: 2}
   currentSpeed: 3
@@ -5488,6 +5492,9 @@ MonoBehaviour:
   lPrefab: {fileID: 1088835485960136, guid: ac561527e7151224abc0e5f6909dfd37, type: 3}
   tPrefab: {fileID: 1214285257743144, guid: a7b9692a2b2ed924db9c280cfed94ddf, type: 3}
   zPrefab: {fileID: 1778885992766154, guid: f23dfd13142ec694595d88b7a3fa13f7, type: 3}
+  cornerPrefab: {fileID: 8591638785594174730, guid: 34b8bffb00bab45ba80b3401a179360a,
+    type: 3}
+  cubePrefab: {fileID: 1700488140381996, guid: 20cc3d5c306664476a873a119d5251ca, type: 3}
   linePrefab: {fileID: 1281086129486866, guid: 5d96a459cf4802249a4ab38d9bfcbec0, type: 3}
 --- !u!114 &1450088316
 MonoBehaviour:
@@ -5508,6 +5515,9 @@ MonoBehaviour:
   tPrefab: {fileID: 1214285257743144, guid: a7b9692a2b2ed924db9c280cfed94ddf, type: 3}
   zPrefab: {fileID: 1778885992766154, guid: f23dfd13142ec694595d88b7a3fa13f7, type: 3}
   linePrefab: {fileID: 1281086129486866, guid: 5d96a459cf4802249a4ab38d9bfcbec0, type: 3}
+  cornerPrefab: {fileID: 8591638785594174730, guid: 34b8bffb00bab45ba80b3401a179360a,
+    type: 3}
+  cubePrefab: {fileID: 1700488140381996, guid: 20cc3d5c306664476a873a119d5251ca, type: 3}
 --- !u!54 &1450088317
 Rigidbody:
   m_ObjectHideFlags: 0
