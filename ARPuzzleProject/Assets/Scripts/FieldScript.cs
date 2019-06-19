@@ -131,6 +131,39 @@ public class FieldScript : MonoBehaviour
 
     }
 
+
+    void moveCurrentPieceAllTheWayDown()
+    {
+        bool somethingMoved = true;
+
+        while (somethingMoved)
+        {
+            //Debug.Log("while tick");
+            somethingMoved = false;
+
+            if (currentPiece.possibleDownwardMovement())
+            {
+
+                //Debug.Log("moved down");
+                somethingMoved = true;
+                movePieceDown(currentPiece);
+            }
+
+        }
+
+        lockPieceAndSwapSpawn();
+
+    }
+
+
+    public void instantPlacementButtonAction()
+    {
+
+        moveCurrentPieceAllTheWayDown();
+
+    }
+
+
     void removeReflection()
     {
         foreach (var element in currentPiece.reflectionObjects)
