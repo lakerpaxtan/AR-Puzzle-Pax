@@ -15,6 +15,8 @@ public class FieldScript : MonoBehaviour
     public GameObject cubePrefOutline;
     //public GameObject randomOrigin;
     
+
+    private int wallOff;
     public AudioClip pieceMovementSound;
     public AudioClip pieceLockedSound;
     public AudioClip pieceRotateSound;
@@ -92,6 +94,7 @@ public class FieldScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        wallOff = 4;
         hasHeldBool = false;
         yOffset = 5;
         randomScript = this.gameObject.GetComponent<RandomPiece>();
@@ -746,7 +749,7 @@ public class FieldScript : MonoBehaviour
     {
         for (int x = 0; x < sizeDim; x++)
         {
-            for (int y = 0; y < sizeDim-3 + yOffset; y++)
+            for (int y = 0; y < sizeDim-wallOff + yOffset; y++)
             {
                 if (boolField[x, y, zVal] == false)
                 {
@@ -764,7 +767,7 @@ public class FieldScript : MonoBehaviour
     {
         for (int z = 0; z < sizeDim; z++)
         {
-            for (int y = 0; y < sizeDim-3 + yOffset; y++)
+            for (int y = 0; y < sizeDim-wallOff + yOffset; y++)
             {
                 if (boolField[xVal, y, z] == false)
                 {
